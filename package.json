@@ -1,5 +1,6 @@
 {
   "name": "@threejjjs/tailwinder",
+  "version": "0.0.1",
   "private": true,
   "bin": {
     "tailwinder": "./dist/index.ts"
