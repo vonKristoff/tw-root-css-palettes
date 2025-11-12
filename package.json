@@ -3,7 +3,7 @@
   "version": "0.0.2",
   "private": false,
   "bin": {
-    "tailwinder": "./dist/index.ts"
+    "tailwinder": "./dist/index.js"
   },
   "type": "module",
   "devDependencies": {
