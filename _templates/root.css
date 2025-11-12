@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+  /* HUE_GENERATION */
+
+  --wash: oklch(from var(--hue-1) l c h);
+  --prime: oklch(from var(--hue-2) l c h);
+  --accent: oklch(from var(--hue-3) l c h);
+  --pop: oklch(from var(--hue-4) l c h);
+  --text: oklch(from var(--hue-5) l c h);
+  --neutral: oklch(from var(--hue-6) l c h);
+
+  --color-wash-100: oklch(from var(--wash) calc(l - STEP) c h);
+  --color-wash-300: var(--wash);
+  --color-wash-500: oklch(from var(--wash) calc(l + STEP) c h);
+
+  --color-prime-100: oklch(from var(--prime) calc(l - STEP) c h);
+  --color-prime-300: var(--prime);
+  --color-prime-500: oklch(from var(--prime) calc(l + STEP) c h);
+
+  --color-accent-100: oklch(from var(--accent) calc(l - STEP) c h);
+  --color-accent-300: var(--accent);
+  --color-accent-500: oklch(from var(--accent) calc(l + STEP) c h);
+
+  --color-pop-100: oklch(from var(--pop) calc(l - STEP) c h);
+  --color-pop-300: var(--pop);
+  --color-pop-500: oklch(from var(--pop) calc(l + STEP) c h);
+
+  --color-text-100: oklch(from var(--text) calc(l - STEP) c h);
+  --color-text-300: var(--text);
+  --color-text-500: oklch(from var(--text) calc(l + STEP) c h);
+
+  --color-neutral-100: oklch(from var(--neutral) calc(l - STEP) c h);
+  --color-neutral-300: var(--neutral);
+  --color-neutral-500: oklch(from var(--neutral) calc(l + STEP) c h);
+}
+
+@theme {
+  --color-primary: var(--color-prime-300);
+  --color-secondary: var(--color-accent-300);
+  --color-wash-100: var(--color-wash-100);
+  --color-wash-200: var(--color-wash-200);
+  --color-wash-300: var(--color-wash-300);
+  --color-prime-100: var(--color-prime-100);
+  --color-prime-200: var(--color-prime-200);
+  --color-prime-300: var(--color-prime-300);
+  --color-accent-100: var(--color-accent-100);
+  --color-accent-200: var(--color-accent-200);
+  --color-accent-300: var(--color-accent-300);
+  --color-pop-100: var(--color-pop-100);
+  --color-pop-200: var(--color-pop-200);
+  --color-pop-300: var(--color-pop-300);
+  --color-text-100: var(--color-text-100);
+  --color-text-200: var(--color-text-200);
+  --color-text-300: var(--color-text-300);
+  --color-neutral-100: var(--color-neutral-100);
+  --color-neutral-200: var(--color-neutral-200);
+  --color-neutral-300: var(--color-neutral-300);
+}

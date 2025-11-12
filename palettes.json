@@ -1,0 +1,42 @@
+[
+  {
+    "name": "monday",
+    "style": "light",
+    "hues": ["#228b22", "#4f3866", "#97006d", "#000d8a", "#cbffcb", "#323232"]
+  },
+  {
+    "name": "coolpanda",
+    "style": "light",
+    "hues": ["#fef6e4", "#8bd3dd", "#f582ae", "#001858", "#fef6e4", "#f3d2c1"]
+  },
+  {
+    "name": "sevenseven",
+    "style": "dark",
+    "hues": ["#55423d", "#e78fb3", "#ffc0ad", "#9656a1", "#fffffe", "#271c19"]
+  },
+  {
+    "name": "strawberry",
+    "style": "light",
+    "hues": ["#faeee7", "#ff8ba7", "#ffc6c7", "#c3f0ca", "#33272a", "#fffffe"]
+  },
+  {
+    "name": "ice",
+    "style": "light",
+    "hues": ["#fffffe", "#ffd803", "#e3f6f5", "#bae8e8", "#272343", "#e3f6f5"]
+  },
+  {
+    "name": "midnight",
+    "style": "dark",
+    "hues": ["#232946", "#eebbc3", "#fffffe", "#eebbc3", "#fffffe", "#d4d8f0"]
+  },
+  {
+    "name": "pinkpanther",
+    "style": "light",
+    "hues": ["#fec7d7", "#fec7d7", "#d9d4e7", "#a786df", "#0e172c", "#fffffe"]
+  },
+  {
+    "name": "frenchfancy",
+    "style": "light",
+    "hues": ["#f2f7f5", "#faae2b", "#ffa8ba", "#fa5246", "#00473e", "#00473e"]
+  }
+]
