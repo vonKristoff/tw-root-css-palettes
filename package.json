@@ -1,9 +1,9 @@
 {
-  "name": "@archetypaltech/tailwinder",
+  "name": "@archetypaltech/tw-root-theme",
   "version": "0.0.4",
   "private": false,
   "bin": {
-    "tailwinder": "./dist/index.js"
+    "tw-root-theme": "./dist/index.js"
   },
   "type": "module",
   "devDependencies": {
