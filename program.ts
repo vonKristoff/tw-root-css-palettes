@@ -52,20 +52,30 @@ async function setColourStep() {
   return res.step;
 }
 async function writeTemplate() {
-  const hues = await chooseThemePalette();
-  const targetPath = await setOutputPath();
-  const colourStep = await setColourStep();
-  const rootText = await rootTemplate.text();
-  
-  const variablesToInsert = hues
-    .map((colour, index) => `  --hue-${index + 1}: ${colour};`)
-    .join("\n");
-  const newContent = rootText
-    .replace("/* HUE_GENERATION */", variablesToInsert)
-    .replace("STEP", colourStep);
+  try {
+    const hues = await chooseThemePalette();
+    const targetPath = await setOutputPath();
+    const colourStep = await setColourStep();
+    const rootText = await rootTemplate.text();
+    
+    const variablesToInsert = hues
+      .map((colour, index) => `  --hue-${index + 1}: ${colour};`)
+      .join("\n");
+    const newContent = rootText
+      .replace("/* HUE_GENERATION */", variablesToInsert)
+      .replace("STEP", colourStep);
 
-  await Bun.write(`./${targetPath}/root.css`, newContent);
-  console.log(`✓ created themed root.css`);
+    await Bun.write(`./${targetPath}/root.css`, newContent);
+    console.log(`✓ created themed root.css`);
+  } catch (err: any) {
+    if (err.name === "ExitPromptError") {
+      console.log("\nPrompt cancelled by user. Exiting...");
+      process.exit(0); // clean exit
+    } else {
+      console.error("Unexpected error:", err);
+      process.exit(1); // exit with error code
+    }
+  }
 }
 
   
