@@ -8,7 +8,7 @@ type Choice = {
   value: string[];
 }
 
-const rootTemplate = Bun.file("./_templates/root.css");
+const rootTemplate = Bun.file("../_templates/root.css");
 await writeTemplate();
 
 async function chooseThemePalette(): Promise<Choice[]> {
