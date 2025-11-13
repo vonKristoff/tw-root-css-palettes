@@ -1,5 +1,3 @@
-@import "tailwindcss";
-
 :root {
   /* HUE_GENERATION */
 
@@ -10,29 +8,29 @@
   --text: oklch(from var(--hue-5) l c h);
   --neutral: oklch(from var(--hue-6) l c h);
 
-  --color-wash-100: oklch(from var(--wash) calc(l - STEP) c h);
-  --color-wash-300: var(--wash);
-  --color-wash-500: oklch(from var(--wash) calc(l + STEP) c h);
+  --color-wash-100: oklch(from var(--wash) calc(l + STEP) c h);
+  --color-wash-200: oklch(from var(--wash) l c h);
+  --color-wash-300: oklch(from var(--wash) calc(l - STEP) c h);
 
-  --color-prime-100: oklch(from var(--prime) calc(l - STEP) c h);
-  --color-prime-300: var(--prime);
-  --color-prime-500: oklch(from var(--prime) calc(l + STEP) c h);
+  --color-prime-100: oklch(from var(--prime) calc(l + STEP) c h);
+  --color-prime-200: oklch(from var(--prime) l c h);
+  --color-prime-300: oklch(from var(--prime) calc(l - STEP) c h);
 
-  --color-accent-100: oklch(from var(--accent) calc(l - STEP) c h);
-  --color-accent-300: var(--accent);
-  --color-accent-500: oklch(from var(--accent) calc(l + STEP) c h);
+  --color-accent-100: oklch(from var(--accent) calc(l + STEP) c h);
+  --color-accent-200: oklch(from var(--accent) l c h);
+  --color-accent-300: oklch(from var(--accent) calc(l - STEP) c h);
 
-  --color-pop-100: oklch(from var(--pop) calc(l - STEP) c h);
-  --color-pop-300: var(--pop);
-  --color-pop-500: oklch(from var(--pop) calc(l + STEP) c h);
+  --color-pop-100: oklch(from var(--pop) calc(l + STEP) c h);
+  --color-pop-200: oklch(from var(--pop) l c h);
+  --color-pop-300: oklch(from var(--pop) calc(l - STEP) c h);
 
-  --color-text-100: oklch(from var(--text) calc(l - STEP) c h);
-  --color-text-300: var(--text);
-  --color-text-500: oklch(from var(--text) calc(l + STEP) c h);
+  --color-text-100: oklch(from var(--text) calc(l + STEP) c h);
+  --color-text-200: oklch(from var(--text) l c h);
+  --color-text-300: oklch(from var(--text) calc(l - STEP) c h);
 
-  --color-neutral-100: oklch(from var(--neutral) calc(l - STEP) c h);
-  --color-neutral-300: var(--neutral);
-  --color-neutral-500: oklch(from var(--neutral) calc(l + STEP) c h);
+  --color-neutral-100: oklch(from var(--neutral) calc(l + STEP) c h);
+  --color-neutral-200: oklch(from var(--neutral) l c h);
+  --color-neutral-300: oklch(from var(--neutral) calc(l - STEP) c h);
 }
 
 @theme {

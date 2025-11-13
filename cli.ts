@@ -65,7 +65,7 @@ async function writeTemplate() {
       .join("\n");
     const newContent = rootText
       .replace("/* HUE_GENERATION */", variablesToInsert)
-      .replace("STEP", colourStep);
+      .replaceAll("STEP", colourStep);
 
     await Bun.write(`./${targetPath}/root.css`, newContent);
     console.log(`${hex('#33ff33','✓')} created themed root.css`);
@@ -79,9 +79,6 @@ async function writeTemplate() {
     }
   }
 }
-
-  
-  // console.log(`✗ palette.json does not exist`);
   
 // Hex color function
 // console.log(hex("#FF6347", "Tomato red"));
