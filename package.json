@@ -9,6 +9,10 @@
   "devDependencies": {
     "@types/bun": "latest"
   },
+  "files": [
+    "dist/",
+    "_templates/"
+  ],
   "publishConfig": {
     "access": "public"
   },
