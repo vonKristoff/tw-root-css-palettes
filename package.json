@@ -21,6 +21,7 @@
   },
   "scripts": {
     "dev": "bun ./index.ts",
+    "update:css": "cp -r ../frontend/src/styles ./dist && rm ./dist/styles/root.css",
     "build": "bun build ./program.ts --target=bun --outfile dist/index.js --minify"
   },
   "dependencies": {
