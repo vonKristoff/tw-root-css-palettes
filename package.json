@@ -1,6 +1,6 @@
 {
   "name": "@threejjjs/tw-root-theme",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "private": false,
   "bin": {
     "tw-root-theme": "./dist/index.js"
