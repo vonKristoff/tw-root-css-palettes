@@ -66,10 +66,10 @@ async function writeTemplate() {
       .replace("STEP", colourStep);
 
     await Bun.write(`./${targetPath}/root.css`, newContent);
-    console.log(`✓ created themed root.css`);
+    console.log(`${hex('#33ff33','✓')} created themed root.css`);
   } catch (err: any) {
     if (err.name === "ExitPromptError") {
-      console.log("\nPrompt cancelled by user. Exiting...");
+      console.log(`\n ${hex('#ff3333','✗')} Prompt cancelled by user. Exiting...`);
       process.exit(0); // clean exit
     } else {
       console.error("Unexpected error:", err);
