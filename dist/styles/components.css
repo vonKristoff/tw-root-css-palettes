@@ -1,0 +1,63 @@
+@layer utilities {
+  .content-grid {
+    display: grid;
+    grid-template-columns:
+      [full-start] 2fr [breakout-start] 1fr
+      [content-start] minmax(0, 65ch) [content-end]
+      1fr [breakout-end] 2fr [full-end];
+  }
+  .content-grid > * {
+    grid-column: content;
+  }
+  .content-grid > .breakout {
+    grid-column: breakout;
+    @apply px-8;
+  }
+  .content-grid > .full-width {
+    grid-column: full;
+  }
+}
+@layer utilities {
+  .btn-primary {
+    @apply mt-4;
+    @apply rounded-lg;
+    @apply px-4;
+    @apply py-2;
+    @apply w-full;
+    @apply max-w-xs;
+  }
+}
+@layer utilities {
+  .link,
+  a.link {
+    position: relative;
+    &:hover,
+    &:focus {
+      @apply text-accent-200;
+      &:before {
+        width: 100%;
+        left: 0em;
+        border-color: currentColor;
+      }
+    }
+    &:before {
+      @apply border;
+      @apply border-transparent;
+      transition: all 0.3s;
+      position: absolute;
+      content: "";
+      bottom: -2px;
+      left: 50%;
+      width: 0%;
+    }
+    &.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      pointer-events: none;
+      color: inherit;
+      &:before {
+        border-color: transparent;
+      }
+    }
+  }
+}

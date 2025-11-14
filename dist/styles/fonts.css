@@ -1,0 +1,9 @@
+:root {
+  --font-noto: "Noto Serif", serif;
+  --font-roboto: "Roboto", sans-serif;
+}
+
+@theme {
+  --font-primary: var(--font-noto);
+  --font-secondary: var(--font-roboto);
+}
