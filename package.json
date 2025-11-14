@@ -1,7 +1,7 @@
 {
   "name": "@threejjjs/tw-root-theme",
   "version": "0.2.2",
-  "private": true,
+  "private": false,
   "bin": {
     "tw-root-theme": "./dist/index.js"
   },
