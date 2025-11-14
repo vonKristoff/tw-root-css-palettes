@@ -1,16 +1,20 @@
 #!/usr/bin/env bun
-import { mkdir } from "fs/promises";
+import { mkdir, cp } from "fs/promises";
 import inquirer from "inquirer";
 import palettes from "./palettes.json" with { type: "json" };
+
+const args = process.argv.slice(2);
+const DEV = args.includes("--dev");
+
+if (DEV) console.log("🧪 Development test mode"); 
 
 type Choice = {
   name: string;
   value: string[];
 }
-// Packaged (from dist)
-const rootTemplate = Bun.file(new URL("../_templates/root.css", import.meta.url));
-// Developement
-// const rootTemplate = Bun.file("./_templates/root.css");
+function getTemplate(tgt: string) {
+  return DEV ? Bun.file(`./_templates/${tgt}`) : Bun.file(new URL(`../_templates/${tgt}`, import.meta.url));
+}
 await writeTemplate();
 
 async function chooseThemePalette(): Promise<Choice[]> {
@@ -54,21 +58,27 @@ async function setColourStep() {
   return res.step;
 }
 async function writeTemplate() {
+  const rootTemplate = getTemplate("root");
+  const rootText = await rootTemplate!.text();
   try {
+    // cli prompt steps
     const hues = await chooseThemePalette();
     const targetPath = await setOutputPath();
     const colourStep = await setColourStep();
-    const rootText = await rootTemplate.text();
-    
+    // process choices
     const variablesToInsert = hues
       .map((colour, index) => `  --hue-${index + 1}: ${colour};`)
       .join("\n");
     const newContent = rootText
       .replace("/* HUE_GENERATION */", variablesToInsert)
       .replaceAll("STEP", colourStep);
-
+    // write generated theme vars to target path
     await Bun.write(`./${targetPath}/root.css`, newContent);
     console.log(`${hex('#33ff33','✓')} created themed root.css`);
+    // copy 
+    const stylesheets = DEV ? "./dist/styles" : new URL(`./styles`, import.meta.url)
+    await cp(stylesheets, `./${targetPath}`, { recursive: true })
+    console.log(`${hex('#33ff33','✓')} copied base styles`);
   } catch (err: any) {
     if (err.name === "ExitPromptError") {
       console.log(`\n ${hex('#ff3333','✗')} Prompt cancelled by user. Exiting...`);

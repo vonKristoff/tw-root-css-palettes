@@ -1,7 +1,7 @@
 {
   "name": "@threejjjs/tw-root-theme",
   "version": "0.1.4",
-  "private": false,
+  "private": true,
   "bin": {
     "tw-root-theme": "./dist/index.js"
   },
@@ -20,8 +20,8 @@
     "typescript": "^5"
   },
   "scripts": {
-    "dev": "bun ./index.ts",
-    "update:css": "cp -r ../frontend/src/styles ./dist && rm ./dist/styles/root.css",
+    "dev": "bun ./cli.ts --dev",
+    "sync:css": "rsync -av --exclude='root.css' ../frontend/src/styles/ ./dist/styles/",
     "build": "bun build ./cli.ts --target=bun --outfile dist/index.js --minify"
   },
   "dependencies": {
