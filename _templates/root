@@ -4,9 +4,9 @@
   --prime: oklch(from var(--hue-1) l c h);
   --text: oklch(from var(--hue-2) l c h);
   --neutral: oklch(from var(--hue-3) l c h);
-  --pop: oklch(from var(--hue-4) l c h);
+  --wash: oklch(from var(--hue-4) l c h);
   --accent: oklch(from var(--hue-5) l c h);
-  --wash: oklch(from var(--hue-6) l c h);
+  --pop: oklch(from var(--hue-6) l c h);
 
   --color-wash-100: oklch(from var(--wash) calc(l + STEP) c h);
   --color-wash-200: oklch(from var(--wash) l c h);
