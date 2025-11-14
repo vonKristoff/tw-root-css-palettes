@@ -7,7 +7,7 @@
 
 @layer base {
   body {
-    @apply text-pop-200;
+    @apply text-text-200;
     @apply font-secondary;
     @apply bg-primary;
     text-align: left;
